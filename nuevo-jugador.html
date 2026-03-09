@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nuevo jugador | Scouting Cantera</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <h1>Registrar nuevo jugador</h1>
+        <div class="actions">
+          <a class="btn btn-secondary" href="index.html">← Volver</a>
+          <button class="btn btn-danger" id="logoutBtn">Salir</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <form id="jugadorForm" class="grid" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="ano_nacimiento">Año nacimiento</label>
+            <input id="ano_nacimiento" name="ano_nacimiento" type="number" min="1990" max="2030" required />
+          </div>
+          <div class="form-group">
+            <label for="posicion">Posición</label>
+            <select id="posicion" name="posicion" required></select>
+          </div>
+          <div class="form-group">
+            <label for="pierna">Pierna</label>
+            <select id="pierna" name="pierna" required></select>
+          </div>
+          <div class="form-group">
+            <label for="club_id">Club</label>
+            <select id="club_id" name="club_id" required></select>
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoría</label>
+            <input id="categoria" name="categoria" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="nivel">Nivel (1-5)</label>
+            <input id="nivel" name="nivel" type="number" min="1" max="5" required />
+          </div>
+          <div class="form-group">
+            <label for="potencial">Potencial (1-5)</label>
+            <input id="potencial" name="potencial" type="number" min="1" max="5" required />
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado</label>
+            <select id="estado" name="estado" required></select>
+          </div>
+          <div class="form-group" style="grid-column: 1 / -1">
+            <label for="observaciones">Observaciones</label>
+            <textarea id="observaciones" name="observaciones"></textarea>
+          </div>
+
+          <div class="actions" style="grid-column: 1 / -1">
+            <button class="btn btn-primary" type="submit">Guardar jugador</button>
+          </div>
+          <p id="formMessage" class="message" style="grid-column: 1 / -1"></p>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="js/jugadores.js"></script>
+  </body>
+</html>

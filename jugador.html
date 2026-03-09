@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha jugador | Scouting Cantera</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <h1>Ficha del jugador</h1>
+        <div class="actions">
+          <a class="btn btn-secondary" href="index.html">← Volver</a>
+          <button class="btn btn-danger" id="logoutBtn">Salir</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2 id="pNombre">-</h2>
+        <p id="detailMessage" class="message"></p>
+        <div class="grid" style="margin-top: 0.75rem">
+          <div><strong>Año:</strong> <span id="pAno">-</span></div>
+          <div><strong>Posición:</strong> <span id="pPosicion">-</span></div>
+          <div><strong>Pierna:</strong> <span id="pPierna">-</span></div>
+          <div><strong>Club:</strong> <span id="pClub">-</span></div>
+          <div><strong>Categoría:</strong> <span id="pCategoria">-</span></div>
+          <div><strong>Nivel:</strong> <span id="pNivel">-</span></div>
+          <div><strong>Potencial:</strong> <span id="pPotencial">-</span></div>
+          <div><strong>Estado:</strong> <span id="pEstado">-</span></div>
+        </div>
+        <p style="margin-top: 1rem"><strong>Observaciones:</strong></p>
+        <p id="pObservaciones" class="muted">-</p>
+      </section>
+
+      <section class="card">
+        <h2>Informes de seguimiento</h2>
+        <div id="informesList" class="informes-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Añadir informe</h2>
+        <form id="informeForm" class="grid" style="grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top:0.75rem;">
+          <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input id="fecha" name="fecha" type="date" required />
+          </div>
+          <div class="form-group">
+            <label for="partido">Partido</label>
+            <input id="partido" name="partido" type="text" placeholder="Ej: CD Ebro vs Real Zaragoza" required />
+          </div>
+          <div class="form-group" style="grid-column: 1 / -1">
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario" name="comentario" required></textarea>
+          </div>
+          <div class="actions" style="grid-column: 1 / -1">
+            <button class="btn btn-primary" type="submit">Guardar informe</button>
+          </div>
+          <p id="informeMessage" class="message" style="grid-column: 1 / -1"></p>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="js/informes.js"></script>
+  </body>
+</html>

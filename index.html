@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jugadores | Scouting Cantera</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="topbar">
+        <h1>Jugadores de cantera (Zaragoza)</h1>
+        <div class="actions">
+          <a class="btn btn-secondary" href="nuevo-jugador.html">+ Nuevo jugador</a>
+          <button class="btn btn-danger" id="logoutBtn">Salir</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Filtros</h2>
+        <form id="filtrosForm" class="grid" style="margin-top: 0.75rem">
+          <div class="form-group">
+            <label for="fAno">Año nacimiento</label>
+            <input id="fAno" type="number" min="1990" max="2030" placeholder="Ej: 2009" />
+          </div>
+          <div class="form-group">
+            <label for="fPosicion">Posición</label>
+            <select id="fPosicion"><option value="">Todas</option></select>
+          </div>
+          <div class="form-group">
+            <label for="fClub">Club</label>
+            <select id="fClub"><option value="">Todos</option></select>
+          </div>
+          <div class="form-group">
+            <label for="fCategoria">Categoría</label>
+            <input id="fCategoria" type="text" placeholder="Cadete, juvenil..." />
+          </div>
+          <div class="form-group">
+            <label for="fNivel">Nivel</label>
+            <select id="fNivel">
+              <option value="">Todos</option>
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+              <option value="4">4</option><option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fPotencial">Potencial</label>
+            <select id="fPotencial">
+              <option value="">Todos</option>
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+              <option value="4">4</option><option value="5">5</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fEstado">Estado</label>
+            <select id="fEstado"><option value="">Todos</option></select>
+          </div>
+        </form>
+
+        <div class="actions" style="margin-top: 0.9rem">
+          <button class="btn btn-primary" form="filtrosForm" type="submit">Aplicar filtros</button>
+          <button class="btn btn-secondary" type="button" id="clearFiltersBtn">Limpiar</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Año</th>
+                <th>Posición</th>
+                <th>Club</th>
+                <th>Categoría</th>
+                <th>Nivel</th>
+                <th>Potencial</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="jugadoresBody"></tbody>
+          </table>
+        </div>
+        <p id="listMessage" class="message muted"></p>
+      </section>
+    </main>
+
+    <script type="module" src="js/jugadores.js"></script>
+  </body>
+</html>
